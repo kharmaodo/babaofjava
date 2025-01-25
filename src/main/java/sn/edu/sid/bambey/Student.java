@@ -3,9 +3,9 @@ package sn.edu.sid.bambey;
 import java.util.Date;
 
 /**
- * Un(e) Etudiant(e) est un(e) Human POJO
+ * Un(e) Etudiant(e) est un(e) Human POJO qui doit implementer la fonctionnalité de paiements
  */
-public class Student extends Human {
+public class Student extends Human implements LocationPayment {
 	private String matricule;
 
 	public Student(String matricule) {
@@ -21,15 +21,7 @@ public class Student extends Human {
 		this.matricule = matricule;
 	}
 
-	/**
-	 * Payer sa location
-	 * 
-	 * @param matricule
-	 * @return
-	 */
-	public String payerLocation(Date locationDate,String matricule) {
-		return "Paiement Location au ["+locationDate+"] avec la matricule [" + matricule+"]";
-	}
+	
 
 	/**
 	 * Payer sa restauration
@@ -50,6 +42,11 @@ public class Student extends Human {
 	public String payerInscription(Date inscriptionDate, Integer ticketInscription, String matricule) {
 		return "Restauration avec la date d'inscriptione: [" + inscriptionDate + " ] le  ticket: [" + ticketInscription
 				+ "] et la matricule: [" + matricule+"]";
+	}
+
+	@Override
+	public String paymentLocation() {
+		return "Paiement fait par l'étudiant(e) avec matricule ["+this.getMatricule()+"]";
 	}
 
 }
