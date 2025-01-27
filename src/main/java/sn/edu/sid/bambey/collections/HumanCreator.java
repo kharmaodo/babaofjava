@@ -4,44 +4,42 @@ import java.util.List;
 
 import sn.edu.sid.bambey.Genre;
 import sn.edu.sid.bambey.Human;
+
 /**
  * Running the creator of humans service.
  */
 public class HumanCreator {
 
 	public static void main(String[] args) {
-		Crud<Human> humanService = new HumanService();
-		
-		 // Create Humans
-        humanService.add(new Human("Doe", "John", Genre.MALE, "xxxx","john.doe@example.com", "123-456-7890",1234));
-        humanService.add(new Human( "Smith", "Jane", Genre.FEMALE,"yyy", "jane.smith@example.com", "987-654-3210",5678));
-        humanService.add(new Human("Lee", "Bruce", Genre.MALE, "zzz","bruce.lee@example.com", "555-555-5555",8790));
+		HumanService humanService = new HumanService();
 
-        // Read All Humans
-        System.out.println("\nAll Humans:");
-        List<Human> allHumans = humanService.getAll();
-        allHumans.forEach(System.out::println);
+		// Create Humans
+		humanService.generateRandomHumans(10);
+		// Read All Humans
+		System.out.println("\nAll Humans:");
+		List<Human> allHumans = humanService.getAll();
+		allHumans.forEach(System.out::println);
 
-        // Read by Last Name
-        System.out.println("\nHumans with Last Name 'Doe':");
-        List<Human> does = humanService.findBy("Doe");
-        does.forEach(System.out::println);
+		// Read by Last Name
+		System.out.println("\nHumans with Last Name 'Doe':");
+		List<Human> does = humanService.findBy("Doe");
+		does.forEach(System.out::println);
 
-        // Update a Human
-        System.out.println("\nUpdating Human with IdCard 1234..");
-        humanService.update(1234, new Human("Doe", "John", Genre.MALE, "xxxx","john.doe@example.com", "123-456-7890",1234));
+		// Update a Human
+		System.out.println("\nUpdating Human with IdCard 5..");
+		humanService.update(5, new Human("Doe", "John", Genre.MALE, "xxxx", "john.doe@example.com", "123-456-7890", 5));
 
-        // Read All Humans after Update
-        System.out.println("\nAll Humans After Update:");
-        humanService.getAll().forEach(System.out::println);
+		// Read All Humans after Update
+		System.out.println("\nAll Humans After Update:");
+		humanService.getAll().forEach(System.out::println);
 
-        // Delete a Human
-        System.out.println("\nDeleting Human with IdCards 8790...");
-        humanService.delete(8790);
+		// Delete a Human
+		System.out.println("\nDeleting Human with IdCards 5...");
+		humanService.delete(5);
 
-        // Read All Humans after Delete
-        System.out.println("\nAll Humans After Deletion:");
-        humanService.getAll().forEach(System.out::println);
+		// Read All Humans after Delete
+		System.out.println("\nAll Humans After Deletion:");
+		humanService.getAll().forEach(System.out::println);
 	}
 
 }
