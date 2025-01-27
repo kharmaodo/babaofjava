@@ -4,5 +4,7 @@ package sn.edu.sid.bambey;
  * propre convenance de cette fonctionnalité.
  */
 public sealed interface  LocationPayment  permits HomeWorker,Student {
-	 String paymentLocation();
+	default String paymentLocation(String identifier) {
+        return "Paiement fait par l'entité identifiée par [" + identifier + "]";
+    }
 }
