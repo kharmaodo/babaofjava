@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Un(e) Etudiant(e) est un(e) Human POJO qui doit implementer la fonctionnalité de paiements
  */
-public class Student extends Human implements LocationPayment {
+public non-sealed class Student extends Human implements LocationPayment {
 	private String matricule;
 
 	public Student(String matricule) {

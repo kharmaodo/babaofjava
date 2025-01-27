@@ -3,7 +3,7 @@ package sn.edu.sid.bambey;
  * 
  * HomeWorker est un human mais pas un Student qui est sensé payer une location
  */
-public class HomeWorker extends Human implements LocationPayment {
+public non-sealed class HomeWorker extends Human implements LocationPayment {
 private Integer idHourly; //Id journalier
 /**
  * Constructor by default with idHourly

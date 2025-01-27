@@ -2,7 +2,7 @@ package sn.edu.sid.bambey;
 /**
  * Un {@link FarmerWorker} est un {@link FarmerWorker} et implemente la fonctionalité {@link LocationPayment#paymentLocation()}
  */
-public class FarmerWorker extends Human implements LocationPayment {
+public non-sealed class FarmerWorker extends Human implements LocationPayment {
 	private Integer dailyHours ;
 	
 	
