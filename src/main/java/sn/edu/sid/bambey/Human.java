@@ -1,7 +1,7 @@
 package sn.edu.sid.bambey;
 /**
  * Gestion de l'homo sapiens sapiens
- * POJO : Plain Old Java Object
+ * POJO : Plain Old Java Object to Java Records 
  */
 public record Human  (
 	 String lastName,

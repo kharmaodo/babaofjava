@@ -33,10 +33,12 @@ public class HumanFabric {
 		 
 		 System.out.println("Paiements pour l'étudiant"+student1.humanDetails().firstName());
 		 String paiementLocation = student1.payerLocation(new Date(),student1.matricule());
-		 String paiementInscription = student1.payerInscription(new Date(), 25000, student1.matricule());
-		 String paiementRestauration = student1.payerRestauration(100, student1.matricule());
+		 String paiementInscription = student1.payerInscription(new Date(), 25000);
+		 String paiementRestauration = student1.payerRestauration(100);
+		 System.out.println("Paiements Location: "+paiementLocation);
 		 System.out.println("Paiements Inscription: "+paiementInscription);
 		 System.out.println("Paiements Restauration: "+paiementRestauration);
+	
 		 
 		
 	}

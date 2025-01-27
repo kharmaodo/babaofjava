@@ -10,13 +10,13 @@ public record Student(String matricule, Human humanDetails) implements LocationP
 	public String paymentLocation() {
 		return LocationPayment.super.paymentLocation(matricule);
 	}
-	public String payerInscription(Date date, int id, String idMatricule) {
-		return "Paiement Inscription" + date + "  par : " + id + "avec le matricule" + idMatricule;
-	}
+	public String payerRestauration(Integer ticket) {
+        return "Restauration avec le ticket: [" + ticket + "] et la matricule: [" + matricule + "]";
+    }
 
-	public String payerRestauration(int id, String idMatricule) {
-		return "Paiement Inscription" + id + "avec le matricule" + idMatricule;
-	}
+    public String payerInscription(Date inscriptionDate, Integer ticketInscription) {
+        return "Inscription avec la date: [" + inscriptionDate + "], le ticket: [" + ticketInscription + "], et la matricule: [" + matricule + "]";
+    }
 
 	public String payerLocation(Date date, String matricule2) {
 		return LocationPayment.super.paymentLocation(matricule) + "à la date du: "+date;
