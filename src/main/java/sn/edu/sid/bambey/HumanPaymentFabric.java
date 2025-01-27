@@ -36,6 +36,23 @@ public class HumanPaymentFabric {
 		String location_ouvrier = ouvrier.paymentLocation();
 		System.out.println("<<<<<<<<<<<<"+location_ouvrier);
 		
+		Human humain_paysan = new Human("Ngor", "DIOUF", Genre.MALE, "gXXXXXXX", null,
+				null, 99978);
+		
+		FarmerWorker paysan = new FarmerWorker(1500);
+		paysan.setFirstName(humain_paysan.getFirstName());
+		paysan.setLastName(humain_paysan.getLastName());
+		paysan.setDigitalEmpreinte(humain_paysan.getDigitalEmpreinte());
+		paysan.setEmail(humain_paysan.getEmail());
+		paysan.setGenre(humain_paysan.getGenre());
+		paysan.setIdCard(humain_paysan.getIdCard());
+		paysan.setTelephone(humain_paysan.getTelephone());
+		
+		//Afficher la fonctionnalité de paiement d'abord pour l'étudiant
+				String location_paysan = paysan.paymentLocation();
+				System.out.println("---------------------------------------------------------------------");
+				System.out.println(" Location du Paysant ["+paysan.getLastName() +"  "+ paysan.getFirstName()+"  ] Location : "+location_paysan);
+				System.out.println("---------------------------------------------------------------------");
 	}
 
 }
