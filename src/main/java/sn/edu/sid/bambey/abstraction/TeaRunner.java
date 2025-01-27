@@ -5,17 +5,36 @@ package sn.edu.sid.bambey.abstraction;
  */
 public class TeaRunner {
 	public static void main(String[] args) {
-		System.out.println("Chinese Tea Preparation:");
 		TeaPreparation chineseTea = new ChineseTeaPreparation();
-		chineseTea.prepareTea();
-
-		System.out.println("\nJapanese Tea Preparation:");
 		TeaPreparation japaneseTea = new JapaneseTeaPreparation();
-		japaneseTea.prepareTea();
-
-		System.out.println("\nOther Culture Tea Preparation:");
 		TeaPreparation otherCultureTea = new OtherCultureTeaPreparation();
-		otherCultureTea.prepareTea();
+		 processTeaPreparation(chineseTea);
+		 processTeaPreparation(japaneseTea);
+		 processTeaPreparation(otherCultureTea);
+	}
+
+	/**
+	 * Process Tea Preparation with pattern matching
+	 * 
+	 * @param teaPreparation
+	 */
+	private static void processTeaPreparation(TeaPreparation teaPreparation) {
+		// Enhanced switch with pattern matching
+        switch (teaPreparation) {
+            case ChineseTeaPreparation chinese -> {
+                System.out.println("Processing Chinese Tea Preparation:");
+                chinese.prepareTea();
+            }
+            case JapaneseTeaPreparation japanese -> {
+                System.out.println("Processing Japanese Tea Preparation:");
+                japanese.prepareTea();
+            }
+            case OtherCultureTeaPreparation other -> {
+                System.out.println("Processing Other Culture Tea Preparation:");
+                other.prepareTea();
+            }
+            default -> throw new IllegalArgumentException("Unknown tea preparation style");
+        }	
 		
 	}
 }
