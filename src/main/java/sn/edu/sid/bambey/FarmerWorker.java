@@ -7,7 +7,6 @@ package sn.edu.sid.bambey;
 public record FarmerWorker(Integer dailyHours, Human humanDetails) {
 
 	public String paymentLocation() {
-		// TODO Auto-generated method stub
 		return "Paiement fait par le paysant"+humanDetails.firstName() +"" +humanDetails.lastName();
 	}
 }

@@ -14,13 +14,13 @@ public record Human  (
 	) {
 	public  Human() {
 		this(
-	            "Unknown",      // Default lastName
-	            "Unknown",      // Default firstName
-	            Genre.UNKNOWN,  // Default genre (assumes a Genre.UNKNOWN enum value exists)
-	            "NoEmpreinte",  // Default digitalEmpreinte
-	            "no-email@domain.com", // Default email
-	            "000-000-0000", // Default telephone
-	            0               // Default idCard
+	            "Unknown",     
+	            "Unknown",      
+	            Genre.UNKNOWN,  
+	            "NoEmpreinte",  
+	            "no-email@domain.com",
+	            "000-000-0000", 
+	            0              
 	        );
 	}
 
