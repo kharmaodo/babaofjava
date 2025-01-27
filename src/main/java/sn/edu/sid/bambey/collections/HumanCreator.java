@@ -10,7 +10,7 @@ import sn.edu.sid.bambey.Human;
 public class HumanCreator {
 
 	public static void main(String[] args) {
-		HumanService humanService = new HumanService();
+		Crud<Human> humanService = new HumanService();
 		
 		 // Create Humans
         humanService.add(new Human("Doe", "John", Genre.MALE, "xxxx","john.doe@example.com", "123-456-7890",1234));
@@ -28,7 +28,7 @@ public class HumanCreator {
         does.forEach(System.out::println);
 
         // Update a Human
-        System.out.println("\nUpdating Human with IDCrad 1234..");
+        System.out.println("\nUpdating Human with IdCard 1234..");
         humanService.update(1234, new Human("Doe", "John", Genre.MALE, "xxxx","john.doe@example.com", "123-456-7890",1234));
 
         // Read All Humans after Update
@@ -36,7 +36,7 @@ public class HumanCreator {
         humanService.getAll().forEach(System.out::println);
 
         // Delete a Human
-        System.out.println("\nDeleting Human with ID 8790...");
+        System.out.println("\nDeleting Human with IdCards 8790...");
         humanService.delete(8790);
 
         // Read All Humans after Delete
