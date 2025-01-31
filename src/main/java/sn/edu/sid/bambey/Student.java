@@ -4,24 +4,10 @@ import java.util.Date;
 
 /**
  * Un(e) Etudiant(e) est un(e) Human POJO qui doit implementer la fonctionnalité de paiements
+ * 
+ * Student est un record maintenant !!
  */
-public class Student extends Human implements LocationPayment {
-	private String matricule;
-
-	public Student(String matricule) {
-		super();
-		this.matricule = matricule;
-	}
-
-	public String getMatricule() {
-		return matricule;
-	}
-
-	public void setMatricule(String matricule) {
-		this.matricule = matricule;
-	}
-
-	
+public record Student (String matricule, Human humanDetails) implements LocationPayment {
 
 	/**
 	 * Payer sa restauration
@@ -46,7 +32,7 @@ public class Student extends Human implements LocationPayment {
 
 	@Override
 	public String paymentLocation() {
-		return "Paiement fait par l'étudiant(e) avec matricule ["+this.getMatricule()+"]";
+		return "Paiement fait par l'étudiant(e) avec matricule ["+this.matricule()+"]";
 	}
 
 }
