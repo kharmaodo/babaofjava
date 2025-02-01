@@ -1,8 +1,4 @@
-/**
- * 
- */
 package sn.edu.sid.bambey.abstractions;
-
 /**
  * How cultures prepare their own tea !
  */

@@ -7,7 +7,6 @@ public record FarmerWorker(Integer dailyHours , Human humanDetails) implements L
 //La classe de base qu'hérite la classe FarmerWorker
 	@Override
 	public String paymentLocation() {
-		// TODO Auto-generated method stub
 		return "Paiement fait par le FarmerWorker ["+this.humanDetails.firstName()+"]  ["+this.humanDetails.lastName()+ " ] avec id dailyHours ["+this.dailyHours()+"]";
 	}
 }

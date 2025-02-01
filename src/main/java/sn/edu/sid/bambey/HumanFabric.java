@@ -9,10 +9,6 @@ import java.util.Date;
  * Créons deux ou trois homo sapiens sapiens
  */
 public class HumanFabric {
-
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		Human humain1 = new Human("Samba","Kébé",Genre.MALE,"xxxxxxxxxx","samba@gmail.com","776666666666",12456789);
 		printInformation(humain1);
