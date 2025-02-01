@@ -18,12 +18,14 @@ public class TeaBuilder {
 	}
 
 	/**
-	 * @param galsenTea
-	 * @param nationality TODO
+	 * Provides steps to prepare tea over the cultures ! 
+	 * 
+	 * @param teaPreparation current concrete class
+	 * @param nationality the current nationality
 	 */
-	private static void howToPrepareTea(TeaPreparation galsenTea, String nationality) {
+	private static void howToPrepareTea(TeaPreparation teaPreparation, String nationality) {
 		System.out.println(">> Debut de préparation du thé: "+nationality);
-		galsenTea.prepareTea();
+		teaPreparation.prepareTea();
 		System.out.println(">> Fin préparation du thé: "+nationality);
 	}
 }
