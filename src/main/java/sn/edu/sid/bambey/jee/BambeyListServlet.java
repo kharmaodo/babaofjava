@@ -19,7 +19,8 @@ public class BambeyListServlet extends HttpServlet {
 		 BambeyModel model =new BambeyModel();
 		 List<Human> listOfStudents = model.getStudents();
 		 PrintWriter out = resp.getWriter();
+		 resp.setCharacterEncoding("UTF-8");
 		 //Proposer la réponse à l'utilisateur
-		 listOfStudents.forEach(s->out.println(s.firstName() +""+s.lastName()));
+		 listOfStudents.forEach(s->out.println(s.lastName() +""+s.firstName()));
 	    }
 }
