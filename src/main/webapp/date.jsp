@@ -1,3 +1,5 @@
+<%@page import="java.time.ZoneId" %>
+<%@page import="java.time.LocalDate" %>
 <html>
 <head>
 <title>Gestionnaire de Date</title>
@@ -8,7 +10,7 @@
 		<b>Example pour une date ! </b>
 		<%
 		
-		java.time.Instant now = java.time.Instant.now();
+		LocalDate now = LocalDate.now(ZoneId.systemDefault());
 		
 		%>
 	<%=now %>
