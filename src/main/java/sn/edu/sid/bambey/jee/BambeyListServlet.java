@@ -2,28 +2,24 @@ package sn.edu.sid.bambey.jee;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Objects;
+import java.util.List;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import sn.edu.sid.bambey.Human;
 
-@WebServlet("/bambeyservlet")
-public class BambeyServlet extends HttpServlet {
+@WebServlet("/bambeylistservlet")
+public class BambeyListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	 public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		 //Recuperer les inputs du formulaires
-		 String lastName = req.getParameter("lastname");
-		 //Valider si possible si l'on a plusieurs inputs parseInt, parseXXXXX
-		//Traiter les données
+		//Appel la source de données 
+		 BambeyModel model =new BambeyModel();
+		 List<Human> listOfStudents = model.getStudents();
 		 PrintWriter out = resp.getWriter();
 		 //Proposer la réponse à l'utilisateur
-		 if(Objects.isNull(lastName)) {
-			 out.println("Vous n'avez pas renseigné votre nom est");
-		 }else  {
-			 out.println("Votre nom est:"+lastName); 
-		 }
+		 listOfStudents.forEach(s->out.println(s.firstName() +""+s.lastName()));
 	    }
 }
