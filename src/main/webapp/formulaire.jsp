@@ -1,12 +1,13 @@
 <html>
 <head>
-<title>Gestionnaire de Date</title>
+<title>Formulaire </title>
 </head>
 <body>
-	<h2>Formulaire à faire avec un GET prévu pour une servleyt ! </h2>
+	<h2>Formulaire avec un GET pour une servlet ! </h2>
 	<form method="GET" action="XXXXX">
 		<input type="text" />
-		<input type="button" />
+		<input type="submit" value="Valider">
+		<input type="submit" value="Cancel">
 	</form>
 	</p>
 </body>
